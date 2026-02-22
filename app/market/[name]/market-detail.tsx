@@ -9,6 +9,7 @@ import { ArrowLeft, TrendingUp, TrendingDown } from "lucide-react"
 import Link from "next/link"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from "recharts"
 import { useTheme } from "next-themes"
+import { GPTAnalysis } from "@/components/gpt-analysis"
 
 export default function MarketDetail() {
   const params = useParams()
@@ -104,6 +105,9 @@ export default function MarketDetail() {
             </CardContent>
           </Card>
         </div>
+
+        {/* GPT-4 Analysis */}
+        <GPTAnalysis market={market} />
 
         {/* Price Chart */}
         <Card className="mt-6">
