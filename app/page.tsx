@@ -46,7 +46,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-3 sm:px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-primary/10 rounded-lg">
@@ -58,20 +58,21 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
               <Button
                 variant="ghost"
                 size="icon"
+                className="h-8 w-8"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               >
-                {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                {theme === 'dark' ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
               </Button>
 
               <Link href="/alerts">
-                <Button variant="ghost" size="icon" className="relative">
-                  <Bell className="h-4 w-4" />
+                <Button variant="ghost" size="icon" className="relative h-8 w-8">
+                  <Bell className="h-3.5 w-3.5" />
                   {unreadCount > 0 && (
-                    <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-red-500 text-[10px] font-medium text-white flex items-center justify-center">
+                    <span className="absolute -top-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-red-500 text-[9px] font-medium text-white flex items-center justify-center">
                       {unreadCount}
                     </span>
                   )}
@@ -79,8 +80,8 @@ export default function Dashboard() {
               </Link>
 
               <Link href="/settings">
-                <Button variant="ghost" size="icon">
-                  <Settings className="h-4 w-4" />
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <Settings className="h-3.5 w-3.5" />
                 </Button>
               </Link>
 
@@ -88,7 +89,7 @@ export default function Dashboard() {
                 onClick={refreshMarkets}
                 disabled={loading}
                 size="sm"
-                className="gap-2"
+                className="gap-1 h-8 px-2 text-xs"
               >
                 <RefreshCw className={cn("h-4 w-4", loading && "animate-spin")} />
                 Aktualisieren
