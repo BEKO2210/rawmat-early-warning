@@ -97,55 +97,46 @@ export default function Dashboard() {
       </header>
 
       <main className="container mx-auto px-4 py-6">
-        {/* Status Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <Card className="glass border-0">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Markets</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold">{markets.length}</div>
-              <p className="text-xs text-muted-foreground">Aktiv überwacht</p>
-            </CardContent>
+        {/* Status Cards - Kompakt */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+          <Card className="glass border-0 p-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-muted-foreground">Markets</p>
+                <p className="text-2xl font-bold">{markets.length}</p>
+              </div>
+              <Activity className="h-5 w-5 text-muted-foreground" />
+            </div>
           </Card>
 
-          <Card className="glass border-0 bg-emerald-500/5">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-emerald-600">Normal</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-emerald-600">{normalCount}</div>
-              <div className="flex items-center gap-1 text-xs text-emerald-600">
-                <Activity className="h-3 w-3" />
-                Stabil
+          <Card className="glass border-0 p-3 bg-emerald-500/5">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-emerald-600">Normal</p>
+                <p className="text-2xl font-bold text-emerald-600">{normalCount}</p>
               </div>
-            </CardContent>
+              <div className="h-2 w-2 rounded-full bg-emerald-500" />
+            </div>
           </Card>
 
-          <Card className="glass border-0 bg-amber-500/5">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-amber-600">Warning</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-amber-600">{warnCount}</div>
-              <div className="flex items-center gap-1 text-xs text-amber-600">
-                <AlertTriangle className="h-3 w-3" />
-                Beobachten
+          <Card className="glass border-0 p-3 bg-amber-500/5">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-amber-600">Warn</p>
+                <p className="text-2xl font-bold text-amber-600">{warnCount}</p>
               </div>
-            </CardContent>
+              <div className="h-2 w-2 rounded-full bg-amber-500" />
+            </div>
           </Card>
 
-          <Card className="glass border-0 bg-red-500/5">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-red-600">Critical</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-3xl font-bold text-red-600">{criticalCount}</div>
-              <div className="flex items-center gap-1 text-xs text-red-600">
-                <AlertCircle className="h-3 w-3" />
-                Handlung nötig
+          <Card className="glass border-0 p-3 bg-red-500/5">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs text-red-600">Critical</p>
+                <p className="text-2xl font-bold text-red-600">{criticalCount}</p>
               </div>
-            </CardContent>
+              <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+            </div>
           </Card>
         </div>
 
