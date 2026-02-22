@@ -5,13 +5,12 @@ import { MarketCard } from "@/components/market-card"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { 
-  Activity, 
-  AlertTriangle, 
-  AlertCircle, 
-  RefreshCw, 
-  Settings, 
-  Bell,
+import {
+  Activity,
+  AlertTriangle,
+  AlertCircle,
+  RefreshCw,
+  Settings,
   Sun,
   Moon,
   TrendingUp
@@ -60,17 +59,6 @@ export default function Dashboard() {
               >
                 {theme === 'dark' ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
               </Button>
-
-              <Link href="/alerts">
-                <Button variant="ghost" size="icon" className="relative h-8 w-8">
-                  <Bell className="h-3.5 w-3.5" />
-                  {unreadCount > 0 && (
-                    <span className="absolute -top-0.5 -right-0.5 h-3.5 w-3.5 rounded-full bg-red-500 text-[9px] font-medium text-white flex items-center justify-center">
-                      {unreadCount}
-                    </span>
-                  )}
-                </Button>
-              </Link>
 
               <Link href="/settings">
                 <Button variant="ghost" size="icon" className="h-8 w-8">
@@ -152,6 +140,13 @@ export default function Dashboard() {
           ))}
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="py-6 text-center">
+        <p className="text-xs text-muted-foreground animate-fade-in">
+          by <span className="font-medium text-foreground/70">Belkis Aslani</span>
+        </p>
+      </footer>
     </div>
   );
 }
