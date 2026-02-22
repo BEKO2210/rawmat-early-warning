@@ -20,14 +20,14 @@ export default function SettingsPage() {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-4">
+        <div className="container mx-auto px-3 sm:px-4 py-2">
+          <div className="flex items-center gap-2">
             <Link href="/">
-              <Button variant="ghost" size="icon">
-                <ArrowLeft className="h-4 w-4" />
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <ArrowLeft className="h-3.5 w-3.5" />
               </Button>
             </Link>
-            <h1 className="text-2xl font-bold">Settings</h1>
+            <h1 className="text-sm font-semibold">Settings</h1>
           </div>
         </div>
       </header>

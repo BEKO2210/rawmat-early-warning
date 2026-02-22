@@ -37,18 +37,19 @@ export default function MarketDetail() {
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b bg-card/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-4">
+        <div className="container mx-auto px-3 sm:px-4 py-2">
+          <div className="flex items-center gap-2">
             <Link href="/">
-              <Button variant="ghost" size="icon">
-                <ArrowLeft className="h-4 w-4" />
+              <Button variant="ghost" size="icon" className="h-8 w-8">
+                <ArrowLeft className="h-3.5 w-3.5" />
               </Button>
             </Link>
-            <div>
-              <h1 className="text-2xl font-bold">{market.name}</h1>
-              <p className="text-sm text-muted-foreground">{market.symbol}</p>
+            <div className="min-w-0">
+              <h1 className="text-sm font-semibold truncate">{market.name}</h1>
+              <p className="text-xs text-muted-foreground">{market.symbol}</p>
             </div>
-            <Badge 
+            <Badge
+              className="text-xs shrink-0"
               variant={market.alertLevel === 'critical' ? 'destructive' : market.alertLevel === 'warn' ? 'default' : 'secondary'}
             >
               {market.alertLevel.toUpperCase()}
